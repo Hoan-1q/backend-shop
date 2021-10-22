@@ -1,21 +1,21 @@
-import Mysql from 'mysql';
+import mysql from 'promise-mysql';
 
-export const connection = Mysql.createConnection({
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'shop',
 });
+export default connection;
+// export const connect = () => {
+//   connection.connect((err) => {
+//     if (!err) console.log('Database is connected!!');
+//     else console.log('Database connect error');
+//   });
+// };
 
-export const connect = () => {
-  connection.connect((err) => {
-    if (!err) console.log('Database is connected!!');
-    else console.log('Database connect error');
-  });
-};
-
-export const closeDB = () => {
-  connection.end((err) => {
-    if (!err) console.log('close database');
-  });
-};
+// export const closeDB = () => {
+//   connection.end((err) => {
+//     if (!err) console.log('close database');
+//   });
+// };
